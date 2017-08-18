@@ -12,7 +12,7 @@ type Font struct {
 
 func New(family string, size int) (*Font, error) {
     if family == "" || family == " " {
-        fmt.Errorf("Cannot create font with nil family")
+        return nil, fmt.Errorf("Cannot create font with nil family")
     }
     ValidSize(&size)
     return &Font{family, size} , nil
@@ -47,7 +47,7 @@ func (font *Font) String() string {
 }
 
 func main() {
-    titleFont, err := New("serif", 11)
+    titleFont, err := New("", 11)
     if err != nil {
         fmt.Println(err)
         os.Exit(0)
