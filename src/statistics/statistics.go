@@ -4,7 +4,6 @@ import (
     "sort"
     "net/http"
     "log"
-    "net/rpc"
     "fmt"
     "strings"
     "strconv"
